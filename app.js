@@ -1,10 +1,10 @@
-var express = require('express')
-var path = require('path')
-var serveStatic = require('serve-static')
+var express = require('express');
+var app = express();
 
-var app = express()
-app.use(serveStatic(path.join(__dirname, 'dist')))
 
-var port = process.env.PORT || 8000
-app.listen(port)
-console.log('server started ' + port)
+var port = process.env.PORT || 8080;
+app.get('/', function(req, res) {
+
+    res.render('index.html');
+});
+
